@@ -8,8 +8,8 @@
  *   4. Replace XXXXXXX in FORM_ENDPOINT with your ID
  */
 
-const USE_FORMSPREE  = false;
-const FORM_ENDPOINT  = 'https://formspree.io/f/XXXXXXX';
+const USE_FORMSPREE  = true;
+const FORM_ENDPOINT  = 'https://formspree.io/f/maqklewa';
 
 document.addEventListener('DOMContentLoaded', function () {
   const form       = document.getElementById('contact-form');

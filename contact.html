@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:,">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – SpeechSpark NOVA</title>
+  <meta name="description" content="Contact SpeechSpark NOVA with questions about our camps or how to get involved." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo-link" aria-label="SpeechSpark NOVA Home">
+        <div class="logo-text">
+          <span class="logo-spark">Speech</span><span class="logo-nova">Spark</span>
+          <span class="logo-region">NOVA</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="camps.html" class="nav-link">Camps</a></li>
+        <li><a href="officers.html" class="nav-link">Officers</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="page-hero-sub">Questions, ideas, or want to get involved? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container two-col">
+
+        <div class="col-text">
+          <h2>Send a Message</h2>
+          <p>Fill out the form and we'll get back to you as soon as possible.</p>
+
+          <form id="contact-form" class="contact-form" novalidate>
+
+            <div class="form-group">
+              <label for="contact-name">Your Name <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required placeholder="Jane Smith" />
+              <span class="field-error" id="name-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="jane@example.com" />
+              <span class="field-error" id="email-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="">— Select a topic —</option>
+                <option value="camp-info">Camp Information</option>
+                <option value="volunteer">Volunteer / Get Involved</option>
+                <option value="partnership">Partnership Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
+              <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+              <span class="field-error" id="message-error" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+
+            <div id="form-success" class="form-success hidden" role="status" aria-live="polite">
+              ✅ Thanks for reaching out! We'll be in touch soon.
+            </div>
+            <div id="form-error" class="form-error-msg hidden" role="alert" aria-live="polite">
+              ⚠️ Something went wrong. Please try emailing us directly.
+            </div>
+
+          </form>
+        </div>
+
+        <div class="col-visual contact-info-block">
+          <h2>Other Ways to Reach Us</h2>
+
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:hello@speechsparknova.org">hello@speechsparknova.org</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Region</strong>
+              <p>Northern Virginia, VA<br>(Fairfax, Loudoun, Prince William, Arlington counties)</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">⏰</span>
+            <div>
+              <strong>Response Time</strong>
+              <p>We typically respond within 2 business days.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text small">
+          <span class="logo-spark">Speech</span><span class="logo-nova">Spark</span>
+          <span class="logo-region">NOVA</span>
+        </div>
+        <p>Public speaking camps across Northern Virginia.</p>
+        <p class="nonprofit-note">⚠️ Not yet a registered nonprofit.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="camps.html">Camps</a></li>
+          <li><a href="officers.html">Officers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <p>📍 Northern Virginia, VA</p>
+        <p>✉️ <a href="mailto:hello@speechsparknova.org">hello@speechsparknova.org</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year-span"></span> SpeechSpark NOVA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

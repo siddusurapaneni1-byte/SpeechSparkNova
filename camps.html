@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:,">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camps – SpeechSpark NOVA</title>
+  <meta name="description" content="View all upcoming SpeechSpark NOVA public speaking camps in Northern Virginia." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo-link" aria-label="SpeechSpark NOVA Home">
+        <div class="logo-text">
+          <span class="logo-spark">Speech</span><span class="logo-nova">Spark</span>
+          <span class="logo-region">NOVA</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="camps.html" class="nav-link active">Camps</a></li>
+        <li><a href="officers.html" class="nav-link">Officers</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Our Camps</h1>
+        <p class="page-hero-sub">Upcoming speaking camps across Northern Virginia. All skill levels welcome.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div id="camps-full-list" class="camps-list full">
+          <!-- Populated by js/camps.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad bg-light">
+      <div class="container">
+        <h2 class="section-title">What to Expect</h2>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <span class="expect-num">01</span>
+            <h3>Welcome & Icebreakers</h3>
+            <p>Every camp kicks off with fun, low-stakes speaking activities so campers feel comfortable right away.</p>
+          </div>
+          <div class="expect-item">
+            <span class="expect-num">02</span>
+            <h3>Skill-Building Sessions</h3>
+            <p>Focused workshops on body language, vocal variety, structure, storytelling, and persuasion.</p>
+          </div>
+          <div class="expect-item">
+            <span class="expect-num">03</span>
+            <h3>Practice Rounds</h3>
+            <p>Campers give multiple speeches with guided feedback from coaches and peers.</p>
+          </div>
+          <div class="expect-item">
+            <span class="expect-num">04</span>
+            <h3>Final Showcase</h3>
+            <p>Each session ends with a showcase where campers present to a small audience and celebrate their growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text small">
+          <span class="logo-spark">Speech</span><span class="logo-nova">Spark</span>
+          <span class="logo-region">NOVA</span>
+        </div>
+        <p>Public speaking camps across Northern Virginia.</p>
+        <p class="nonprofit-note">⚠️ Not yet a registered nonprofit.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="camps.html">Camps</a></li>
+          <li><a href="officers.html">Officers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <p>📍 Northern Virginia, VA</p>
+        <p>✉️ <a href="mailto:hello@speechsparknova.org">hello@speechsparknova.org</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year-span"></span> SpeechSpark NOVA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/camps-data.js"></script>
+  <script src="js/camps.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,870 @@
+/* ============================================================
+   SPEECHSPARK NOVA — style.css
+   TABLE OF CONTENTS:
+   1. CSS Variables
+   2. Reset & Base
+   3. Typography
+   4. Layout Utilities
+   5. Buttons
+   6. Hero Section
+   7. Feature Cards
+   8. Camps Listing
+   9. Mission Strip
+   10. CTA Strip
+   11. Page Hero (inner pages)
+   12. About Page
+   13. Officers Page
+   14. Contact Page
+   15. Footer
+   16. Utility Classes
+   ============================================================ */
+
+
+/* ============================================================
+   1. CSS VARIABLES — change these to restyle the whole site
+   ============================================================ */
+:root {
+  --color-primary:    #1A3A5C;
+  --color-accent:     #E8612C;
+  --color-accent-lt:  #F4A96A;
+  --color-white:      #FFFFFF;
+  --color-bg:         #FFFFFF;
+  --color-bg-light:   #F7F8FA;
+  --color-text:       #1C2B3A;
+  --color-text-muted: #5A6A7A;
+  --color-border:     #DDE3EA;
+
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+
+  --container-max: 1100px;
+  --radius:        8px;
+  --radius-lg:     16px;
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.12);
+
+  --transition: 0.2s ease;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+a:hover { color: var(--color-accent); }
+
+ul { list-style: none; }
+
+
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  line-height: 1.25;
+  font-weight: normal;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+h3 { font-size: 1.25rem; font-weight: bold; font-family: var(--font-body); }
+
+p {
+  margin-bottom: var(--space-sm);
+  max-width: 68ch;
+}
+
+p:last-child { margin-bottom: 0; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section-pad { padding-block: var(--space-xl); }
+.bg-light { background: var(--color-bg-light); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.center-link {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+
+/* ============================================================
+   5. BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  border: 2px solid transparent;
+  line-height: 1.4;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: #c94e1f;
+  border-color: #c94e1f;
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+
+/* ============================================================
+   6. HERO SECTION
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-xl);
+  min-height: 80vh;
+  padding-inline: var(--space-md);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-block: var(--space-xl);
+}
+
+.hero-eyebrow {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  max-width: none;
+}
+
+.hero-heading {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  max-width: 52ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.hero-graphic {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding-left: var(--space-lg);
+}
+
+.speech-bubble {
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  max-width: 280px;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 14px solid var(--color-border);
+}
+
+.bubble-2 {
+  margin-left: 2rem;
+  border-color: var(--color-accent-lt);
+}
+
+.bubble-2::after { border-top-color: var(--color-accent-lt); }
+
+.bubble-3 { margin-left: 1rem; }
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .hero-graphic { display: none; }
+}
+
+
+/* ============================================================
+   7. FEATURE CARDS
+   ============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.card h3 {
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   8. CAMPS LISTING
+   ============================================================ */
+.camps-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.camps-list.full { grid-template-columns: 1fr; }
+
+.camp-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.camp-date-block {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  min-width: 70px;
+}
+
+.camp-date-block .camp-month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.camp-date-block .camp-day {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.camp-details h3 { margin-bottom: var(--space-xs); }
+
+.camp-meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.camp-desc {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.camp-tag {
+  display: inline-block;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.camp-tag.open {
+  background: #E8F5E9;
+  border-color: #81C784;
+  color: #2E7D32;
+}
+
+.camp-tag.full {
+  background: #FFF3E0;
+  border-color: #FFB74D;
+  color: #E65100;
+}
+
+.no-camps {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-xl);
+}
+
+
+/* ============================================================
+   9. MISSION STRIP
+   ============================================================ */
+.mission-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.mission-note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+  background: #FFF8F0;
+  border-left: 4px solid var(--color-accent-lt);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.mission-stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.stat-box {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  min-width: 140px;
+}
+
+.stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .mission-inner { grid-template-columns: 1fr; }
+  .mission-stat-group { flex-direction: row; flex-wrap: wrap; }
+}
+
+
+/* ============================================================
+   10. CTA STRIP
+   ============================================================ */
+.cta-strip { background: var(--color-primary); }
+
+.cta-inner { text-align: center; }
+
+.cta-strip h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-strip p {
+  color: rgba(255,255,255,0.75);
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+}
+
+.cta-strip .btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+
+/* ============================================================
+   11. PAGE HERO (inner pages)
+   ============================================================ */
+.page-hero {
+  background: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+}
+
+.page-hero h1 { margin-bottom: var(--space-xs); }
+
+.page-hero-sub {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   12. ABOUT PAGE
+   ============================================================ */
+.about-icon-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-icon {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.value-item {
+  padding: var(--space-lg);
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.value-item h3 {
+  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
+}
+
+.status-block { max-width: 720px; }
+
+.status-notice {
+  background: #FFF8F0;
+  border: 1px solid var(--color-accent-lt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.status-notice p { max-width: none; }
+.status-notice strong { color: var(--color-accent); }
+
+
+/* ============================================================
+   13. OFFICERS PAGE
+   ============================================================ */
+.officers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.officer-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.officer-card:hover { box-shadow: var(--shadow-md); }
+
+.officer-photo-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.officer-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.officer-initial {
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.officer-name {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.officer-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.officer-bio {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.officer-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-accent-lt);
+}
+
+.officer-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+
+/* ============================================================
+   14. CONTACT PAGE
+   ============================================================ */
+.contact-form { max-width: 540px; }
+
+.form-group { margin-bottom: var(--space-md); }
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.required { color: var(--color-accent); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.12);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+  border-color: #E53935;
+}
+
+.field-error {
+  display: block;
+  font-size: 0.82rem;
+  color: #E53935;
+  margin-top: 0.3rem;
+  min-height: 1em;
+}
+
+.form-group textarea { resize: vertical; }
+
+.form-success {
+  margin-top: var(--space-md);
+  background: #E8F5E9;
+  border: 1px solid #81C784;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.form-error-msg {
+  margin-top: var(--space-md);
+  background: #FFF3E0;
+  border: 1px solid #FFB74D;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  color: #E65100;
+}
+
+.contact-info-block { padding-top: 2rem; }
+
+.contact-detail {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-detail strong {
+  display: block;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.contact-detail p {
+  margin: 0;
+  font-size: 0.975rem;
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.expect-item {
+  padding: var(--space-md);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.expect-num {
+  display: block;
+  font-size: 2.5rem;
+  font-family: var(--font-display);
+  color: var(--color-border);
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.expect-item h3 { margin-bottom: var(--space-xs); }
+
+.expect-item p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ============================================================
+   15. FOOTER
+   ============================================================ */
+#site-footer {
+  background: var(--color-primary);
+  color: rgba(255,255,255,0.8);
+  padding-top: var(--space-xl);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
+
+.footer-brand .logo-text { margin-bottom: var(--space-sm); }
+
+.footer-brand p {
+  font-size: 0.9rem;
+  max-width: none;
+}
+
+.nonprofit-note {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.5rem;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover { color: var(--color-white); }
+
+.footer-contact p {
+  font-size: 0.9rem;
+  max-width: none;
+}
+
+.footer-contact a { color: rgba(255,255,255,0.8); }
+.footer-contact a:hover { color: var(--color-white); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  padding: var(--space-sm);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-bottom p {
+  max-width: none;
+  margin: 0;
+}
+
+
+/* ============================================================
+   16. UTILITY CLASSES
+   ============================================================ */
+.hidden { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
